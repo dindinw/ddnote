@@ -31,3 +31,17 @@ Usage : mov2gif.sh [parameters]
                              # the default is 50
         --convert_only       # if the flag set, try to re-create GIF by using last splited photoes.
 ```
+
+
+### References
+
+* http://ffmpeg.org/
+* http://www.imagemagick.org/
+
+### Many Thanks and Great Articles 
+
+* https://gist.github.com/tskaggs/6394639
+* https://gist.github.com/dergachev/4627207
+* http://superuser.com/questions/556029/ffmpeg-converts-flv-video-to-gif-with-awful-quality
+* http://www.atrixnet.com/animated-gifs/
+
