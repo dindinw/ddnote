@@ -42,70 +42,124 @@
 
 >A：猿世界中最赛雷的记账工具，厚厚。 （维基：Git is a widely used source code management system for software development. It is a distributed revision control system with an emphasis on speed, data integrity, and support for distributed, non-linear workflows. ）
 
-### Install
-
 Mac 自备，点右上角Spotlight｜搜索terminal｜点击打开terminal。
 
 >除非特别说明，所有的命令都在terminal（即终端或曰命令行）中输入。
 
+>更多Git介绍详见Git系列文章。
+
 1. 检查版本
 
-    ```bash
+    ```
     $ git --version
     git version 1.9.5 (Apple Git-50.3)
     ```
 
 2. 新建一个目录，名曰learngit, （#号是注释不需要输入。啥是注释？，就是转账备注）
 
-    ```bash
+    ```
     $ mkdir learngit
     ```
 
 3.  进入learngit目录
 
-    ```bash
+    ```
     $ cd learngit
     ```
 
 4.  初始化git
 
-    ```bash
+    ```
     $ git init
     Initialized empty Git repository in /Users/alex/Dev/github.com/dindinw/learngit/.git/
     ```
 
-5.  创建文本文件Hello.md
-    ```bash
-    $ touch Hello.md
+5.  创建文本文件Hello.md, 内容为一行文字: “Hello，World!”
     ```
-
-6.  显示当前文件的状态，显示Hello.md是untracked状态
-
-    ```bash
-    $ git status
-    On branch master
-
-    Initial commit
-
-    Untracked files:
-      (use "git add <file>..." to include in what will be committed)
-
-        Hello.md
-
-    nothing added to commit but untracked files present (use "git add" to track)
+    $ echo 'Hello World!'> Hello.md 
+    $ cat Hello.md 
+    Hello World!
     ```
+    
+6.  将改动提交到Git 
 
+    ```
+    $ git add Hello.md
+    $ git commit -m 'first line'
+    ```
 
 0x10 Markdown语法简介
 -------------------
 
+>Q: 煞是马可挡？
+
+>A: 马可挡就是一种猿与非猿都能直接读懂的写字格式。 维基：Markdown是一种轻量级标记语言，允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML(或者HTML)文档。
+
+>Q: 为啥要用Markdown？
+
+>A: 因为文艺猿与技术猿都只爱排版的结果，而恨排版的过程。
+
+举个栗子：下面是一个简单的Markdown加粗和列表的写法，以及排版后的效果
+
+```
+**过节**的姿势
+
+1. 碎碎吃吃吃 
+2. 吃吃吃碎碎
+3. 碎碎碎碎吃
+```
+
+**过节**的姿势
+
+1. 碎碎吃吃吃 
+2. 吃吃吃碎碎
+3. 碎碎碎碎吃
+
+附赠一个简单的Markdown写法指南，更详尽的用法参考附录链接。
+
+![MarkDown](https://mmbiz.qlogo.cn/mmbiz/ykYribFYPpbYyHOVGicGibuZbE6oSrnricQOX4S6aNSYCgrekDoax56LichZKOvqkOsgaw7L6maut8ePtGhKq3f2wjg/0?wx_fmt=png)
+
+
 0x11 MarkdownHere工具的使用
 -------------------------
+
+![MarkdownHereLogo](https://mmbiz.qlogo.cn/mmbiz/ykYribFYPpbYyHOVGicGibuZbE6oSrnricQOah49KfgL01tt39C2BJ60BrtjgUNI90znsNAbv9QTVlzTnEv0Zo39Mw/0?wx_fmt=png)
+
+MarkdownHere是一款开源浏览器以及邮件客户端插件：功能是可以将一段基于Markdown标签的文字，直接替换成HTML格式。 它支持基本上所有浏览器（IE除外），如Chrome,Firefox,Safari,Opera以及Chromium和Thunderfire等邮件客户端。 
+
+### 安装
+
+用你的浏览器访问下面链接选择对应浏览器安装皆可。
+
+> http://markdown-here.com/get.html
+
+![MarkdownInstall](https://mmbiz.qlogo.cn/mmbiz/ykYribFYPpbZVFzH9t9ic8bia5YaWf8AbNfAswyd5zeh1aib1YMwPatQg7wDZQ7oQ69ePWLlWRSRnNsUhpIaNtzh5A/0?wx_fmt=png)
+
+### 使用
+
+> 当安装好插件后，在浏览器的任意编辑界面中，使用基于Markdown文本，可以使用热键 `Option` + `Command` + `M` 转换成Html文本。而且再使用一次相同的热键可以又转换为Markdown文本。
+
+下面是使用时候的效果
+
+![MarkdownHereAnimation](https://mmbiz.qlogo.cn/mmbiz/ykYribFYPpbZVFzH9t9ic8bia5YaWf8AbNfkhhpN1wIibAYjrgL3qbctUaW1oW2Pou9GBRgBtC2o8pcTR5TSetUqKA/0?wx_fmt=gif)
 
 0x100 定制MarkdownHere优化显示效果
 ------------------------------
 
 ### 解决语法高亮
+
+强制插入换行符（解决微信官方网站Bug）
+
+![ForceLineBreak](https://mmbiz.qlogo.cn/mmbiz/ykYribFYPpbYyHOVGicGibuZbE6oSrnricQO14u4IHLeVIIp9gibibfxHKjU1lnXBoAKia9J0lCD3S1tD5l3kfJicK9crg/0?wx_fmt=png)
+
+**使用前**
+
+![BeforeUse](https://mmbiz.qlogo.cn/mmbiz/ykYribFYPpbYyHOVGicGibuZbE6oSrnricQO6wrdxU2bl6Z4icCyJBYRtEWWVlYkib7MA3NIrpy7r9ZfoUM24eoZ2vIQ/0?wx_fmt=png)
+
+**使用后**
+
+![AfterUse](https://mmbiz.qlogo.cn/mmbiz/ykYribFYPpbYyHOVGicGibuZbE6oSrnricQOp62jR33jLpyI7WUoaBibcakicR2ybtriaS5KiamkhqYTOWBl2ND8qb380Q/0?wx_fmt=png)
+
 
 ### 美化MarkDownHere的默认字体大小和行距
 
@@ -158,3 +212,4 @@ $ curl $get_material_count
     * https://github.com/adam-p/markdown-here/wiki
 * Git
     * [Pro Git Book Second Edition](https://git-scm.com/book/en/v2/)
+    * [Atlassian’s Git tutorials](https://www.atlassian.com/git/tutorials/)
