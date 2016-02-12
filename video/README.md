@@ -2,9 +2,9 @@
 Mac animation GIF how to 
 =========================
 
-### Overiew 
+### Overview 
 
-1. Screencast(QuickTime) -> .mov
+1. Screencast (QuickTime) -> .mov
 
 2. .mov(ffmpeg) -> .png 
 
