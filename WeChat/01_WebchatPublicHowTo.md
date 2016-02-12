@@ -99,7 +99,7 @@ Mac 自备，点右上角Spotlight｜搜索terminal｜点击打开terminal。
 
 >A: 因为文艺猿与技术猿都只爱排版的结果，而恨排版的过程。
 
-举个栗子：下面是一个简单的Markdown加粗和列表的写法，以及排版后的效果
+举个栗子：下面是一个简单的Markdown字体加粗和有序列表的写法，以及排版后的效果。可以看出Markdown排版的简洁。
 
 ```
 **过节**的姿势
@@ -125,7 +125,7 @@ Mac 自备，点右上角Spotlight｜搜索terminal｜点击打开terminal。
 
 ![MarkdownHereLogo](https://mmbiz.qlogo.cn/mmbiz/ykYribFYPpbYyHOVGicGibuZbE6oSrnricQOah49KfgL01tt39C2BJ60BrtjgUNI90znsNAbv9QTVlzTnEv0Zo39Mw/0?wx_fmt=png)
 
-MarkdownHere是一款开源浏览器以及邮件客户端插件：功能是可以将一段基于Markdown标签的文字，直接替换成HTML格式。 它支持基本上所有浏览器（IE除外），如Chrome,Firefox,Safari,Opera以及Chromium和Thunderfire等邮件客户端。 
+MarkdownHere是一款开源浏览器以及邮件客户端插件：功能是可以将一段基于Markdown标签的文字，直接替换成HTML格式。 它支持基本上所有浏览器（IE除外），如Chrome,Firefox,Safari,Opera等和Thunderbird等邮件客户端。
 
 ### 安装
 
@@ -139,29 +139,38 @@ MarkdownHere是一款开源浏览器以及邮件客户端插件：功能是可�
 
 > 当安装好插件后，在浏览器的任意编辑界面中，使用基于Markdown文本，可以使用热键 `Option` + `Command` + `M` 转换成Html文本。而且再使用一次相同的热键可以又转换为Markdown文本。
 
-下面是使用时候的效果
+**下面是使用时候的效果**
 
-![MarkdownHereAnimation](https://mmbiz.qlogo.cn/mmbiz/ykYribFYPpbZVFzH9t9ic8bia5YaWf8AbNfkhhpN1wIibAYjrgL3qbctUaW1oW2Pou9GBRgBtC2o8pcTR5TSetUqKA/0?wx_fmt=gif)
-
-0x100 定制MarkdownHere优化显示效果
-------------------------------
+![MarkdownHereAnimation](https://mmbiz.qlogo.cn/mmbiz/ykYribFYPpbZVFzH9t9ic8bia5YaWf8AbNfFicFByJdokp1hubCiawNhicdsA2CGt5ORVONu67poFSicomZe5NkUe7tyg/0?wx_fmt=gif)
 
 ### 解决语法高亮
 
-强制插入换行符（解决微信官方网站Bug）
+对于猿来说，阅读没有语法高亮的代码实在是一种痛苦，这也是使用MarkdownHere的动力之一。MarkdownHere使用了一个相当NB的语法高亮外挂[highligthjs](https://highlightjs.org/),
+号称支持多达146中语言的语法高亮显示，以及66显示风格（当然对本汪来说，默认的Github风格就足够好了）
+
+问题是具体使用中，发现由于微信公众号官方网站的BUG，本来正确显示代码，一旦保存后，换行符号就自动消失了，实在是让本汪欲哭无泪啊。
+总之这个问题本汪解决了，补丁也提交给MarkdownHere维护人了，此处省略200字具体问题描述和解决办法，处女座同学汪可以看Github上的一个Pull Request
+> https://github.com/adam-p/markdown-here/pull/329
+
+打上这个补丁后，勾选最后的‘Enable line breaks in Syntax Highlighting即可。
 
 ![ForceLineBreak](https://mmbiz.qlogo.cn/mmbiz/ykYribFYPpbYyHOVGicGibuZbE6oSrnricQO14u4IHLeVIIp9gibibfxHKjU1lnXBoAKia9J0lCD3S1tD5l3kfJicK9crg/0?wx_fmt=png)
 
-**使用前**
+> 使用前
 
 ![BeforeUse](https://mmbiz.qlogo.cn/mmbiz/ykYribFYPpbYyHOVGicGibuZbE6oSrnricQO6wrdxU2bl6Z4icCyJBYRtEWWVlYkib7MA3NIrpy7r9ZfoUM24eoZ2vIQ/0?wx_fmt=png)
 
-**使用后**
+> 使用后
 
 ![AfterUse](https://mmbiz.qlogo.cn/mmbiz/ykYribFYPpbYyHOVGicGibuZbE6oSrnricQOp62jR33jLpyI7WUoaBibcakicR2ybtriaS5KiamkhqYTOWBl2ND8qb380Q/0?wx_fmt=png)
 
+### 定制MarkdownHere优化显示效果
 
-### 美化MarkDownHere的默认字体大小和行距
+通过修改MarkdownHere的默认CSS文件，可以细调Markdown转换后的显示效果。
+
+![MarkdownHereCSS](https://mmbiz.qlogo.cn/mmbiz/ykYribFYPpbZVFzH9t9ic8bia5YaWf8AbNfyQLoc1wQJBjSNQgJEE7xCrLs27PWb5GaLUH2HKnz0pnibgCfjgoibO9A/0?wx_fmt=png)
+
+例如：调整一下MarkDownHere的默认字体大小和行距
 
 ```css
 .markdown-here-wrapper[data-md-url*="mp.weixin."] {
