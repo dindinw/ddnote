@@ -88,6 +88,8 @@ Mac 自备，点右上角Spotlight｜搜索terminal｜点击打开terminal。
     $ git commit -m 'first line'
     ```
 
+7.  
+
 0x10 Markdown语法简介
 -------------------
 
@@ -184,9 +186,13 @@ MarkdownHere是一款开源浏览器以及邮件客户端插件：功能是可�
 
 如何利用微信API同步到微信公众号平台。微信公号平台本身是不能直接接驳到github的，那就只能看看微信平台给我们提供了那些API可以利用。打开微信公号平台，左下脚有个开发者工具的链接，打开链接你会发现开发手册，API文档，开发与测试工具等等。
 
+阅读API文件发现，公号的文章在微信中被称为“图文素材”，而公号平台通过“素材资料库”API进行管理。
+
+![WeChatAPIDoc](https://mmbiz.qlogo.cn/mmbiz/ykYribFYPpbZn57v5JYFgnCYYBuVic8zaIG7b6VrBroAnOOUh0QZn5FycmCXk7qa7yTc2SqjU87K6JQgqibxHoRZw/0?wx_fmt=png)
+
 ### 木有权限 
 
-阅读API文件发现，公号的文章在微信中被称为“图文素材”，而公号平台通过“素材资料库”API进行管理。貌似不错，让我们测试一下微信相关素材资料库API，从最简单的开始，取素材库的个数是最简单的。
+貌似不错，让我们测试一下微信相关素材资料库API，从最简单的开始，取素材库的个数是最简单的。
 
 ```bash
 # get ACCESS_TOKEN
@@ -207,6 +213,8 @@ $ curl $get_material_count
 ### 柳暗花明 
 
 又仔细观察了一下“开发者工具”，发现了自己看漏了这个东东：“公众平台测试帐号”。下面的醒目的写着，无需申请公众号就可以体验并测试所有高级功能。
+
+![WeChatTestAccount](https://mmbiz.qlogo.cn/mmbiz/ykYribFYPpbZn57v5JYFgnCYYBuVic8zaI7iaPdxdLI0Ry4cgj5dcYhLNRTvwiazw3LibXfHBpG0vrqMezib4mqF5Ucw/0?wx_fmt=png)
 
 
 参考链接
