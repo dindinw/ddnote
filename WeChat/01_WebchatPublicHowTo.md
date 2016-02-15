@@ -50,32 +50,32 @@ Mac 自备，点右上角Spotlight｜搜索terminal｜点击打开terminal。
 
 1. 检查版本
 
-    ```
+    ```github-cmd
     $ git --version
     git version 1.9.5 (Apple Git-50.3)
     ```
 
-2. 新建一个目录，名曰learngit, （#号是注释不需要输入。啥是注释？，就是转账备注）
+2. 新建一个目录，名曰learngit
 
-    ```
+    ```github-cmd
     $ mkdir learngit
     ```
 
 3.  进入learngit目录
 
-    ```
+    ```github-cmd
     $ cd learngit
     ```
 
 4.  初始化git
 
-    ```
+    ```github-cmd
     $ git init
     Initialized empty Git repository in /Users/alex/Dev/github.com/dindinw/learngit/.git/
     ```
 
 5.  创建文本文件Hello.md, 内容为一行文字: “Hello，World!”
-    ```
+    ```github-cmd
     $ echo 'Hello World!'> Hello.md 
     $ cat Hello.md 
     Hello World!
@@ -83,7 +83,7 @@ Mac 自备，点右上角Spotlight｜搜索terminal｜点击打开terminal。
     
 6.  将改动提交到Git 
 
-    ```
+    ```github-cmd
     $ git add Hello.md
     $ git commit -m 'first line'
     ```
@@ -230,3 +230,5 @@ $ curl $get_material_count
 * Git
     * [Pro Git Book Second Edition](https://git-scm.com/book/en/v2/)
     * [Atlassian’s Git tutorials](https://www.atlassian.com/git/tutorials/)
+* GitHub
+    * https://guides.github.com/activities/hello-world/
