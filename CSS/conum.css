@@ -1,0 +1,41 @@
+.conum[data-value] {
+
+    display: inline-block ;
+
+    color: white !important;
+    background-color: #333333;
+
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+
+    text-align: center;
+
+    font-size: 12px;
+    line-height: 20px;
+
+    font-family: "Open Sans", "Sans", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+
+    text-indent: -1px;
+
+}
+
+.conum[data-value] * {
+    color: white !important;
+}
+
+.conum[data-value] + b {
+    display: none;
+}
+
+.conum[data-value]:after {
+    content: attr(data-value);
+}
+
+pre .conum[data-value] {
+    position: relative;
+    top: -2px;
+}
