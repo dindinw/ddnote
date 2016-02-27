@@ -25,9 +25,11 @@ $ git config --global credential.helper wincred
 When use `wincred` see *Credential manager* in your *Control Panel* settings
 ![winced](https://mmbiz.qlogo.cn/mmbiz/ykYribFYPpbZnxaIia48Gm8uFTqLQPpBFgictVBeeKweVmz9ia5tnpa8mCIbXpiaIKbo5RkOkSXnhM7hibPrnHATwypQ/0?wx_fmt=png)
 
-
 ```
 # MAC, using osxkeychain
+git config --global credential.helper osxkeychain
+$ git config -l|grep cred
+credential.helper=osxkeychain
 ```
 
 ```
