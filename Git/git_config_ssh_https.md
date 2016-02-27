@@ -4,6 +4,7 @@ git's remote URL has two kinds:
 
 * HTTPS
 > https://github.com/USER/REPO.git
+
 * SSH
 > git@github.com/USER/REPO.git
 
