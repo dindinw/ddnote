@@ -81,8 +81,42 @@ default : `CTL+PageUp/PageDown` `CTL+SHIFT+PageUp/PageDown`
 
 -->     : `CTL+SHIFT+]/[`  tab nav
 
+```
+gconftool-2 --set /apps/gnome-terminal/profiles/Default/default_size_columns \
+            --type=int 140 
+gconftool-2 --set /apps/gnome-terminal/profiles/Default/use_custom_default_size \
+            --type=bool true
+gconftool-2 --set /apps/gnome-terminal/keybindings/close_tab --type=string "<Ctrl>w"
+```
+
+```
+$ gconftool-2 --get  /apps/gnome-terminal/keybindings/new_tab
+<Ctrl><Shift>t
+$ gconftool-2 --set /apps/gnome-terminal/keybindings/new_tab --type=string "<Ctrl>t"
+```
+
+```
+$ gconftool-2 --get  /apps/gnome-terminal/keybindings/next_tab
+<Control>Page_Down
+alex@ubuntu-box:~
+$ gconftool-2 --get  /apps/gnome-terminal/keybindings/prev_tab
+<Control>Page_Up
+```
+Set to `Ctrl>+[` and `Ctrl+[` 
+```
+$ gconftool-2 --set /apps/gnome-terminal/keybindings/next_tab --type=string "<Ctrl>bracketright"
+$ gconftool-2 --set /apps/gnome-terminal/keybindings/prev_tab --type=string "<Ctrl>bracketleft"
+```
+
+Set to `Ctrl+Shift+]` and `Ctrl+Shift+[`
+```
+$ gconftool-2 --set /apps/gnome-terminal/keybindings/next_tab --type=string "<Ctrl><Shift>braceright"
+$ gconftool-2 --set /apps/gnome-terminal/keybindings/prev_tab --type=string "<Ctrl><Shift>braceleft"
+```
+
 
 Re-mapping firefox shortcut keys for tab nav
+
 --------------------------------------------
 default : `CTL+Tab` `CTL+PageUp/PageDown`
 
