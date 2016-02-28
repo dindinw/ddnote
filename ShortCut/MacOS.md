@@ -52,6 +52,14 @@ defaults write -g ApplePressAndHoldEnabled -bool true
 defaults write com.sublimetext.3 ApplePressAndHoldEnabled -bool false
 ```
 
+```
+# Community Edition IntelliJ 
+defaults write com.jetbrains.intellij.ce ApplePressAndHoldEnabled -bool false
+
+# Ultimate Edition IntelliJ 
+defaults write com.jetbrains.intellij ApplePressAndHoldEnabled -bool false
+```
+
 see (https://gist.github.com/kconragan/2510186) 
 
 OS X El Capitan disable System Integrity Protection
