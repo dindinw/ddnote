@@ -47,10 +47,43 @@ $ xmodmap ~/.Xmodmap
 
 you can add the above line to your `~/.xinitrc`
 
-
 https://earthviaradio.wordpress.com/2012/02/06/swapping-the-left-alt-and-ctrl-keys-in-ubuntu-11-10/
 
 
-How re-mapping gnome-terminal shortcut keys 
--------------------------------------------
+Switch Windows by using CTL-TAB
+-------------------------------
+Ubuntu windows manager use `Alt-TAB` to switch windows by default.
+I want to change to `CTL-TAB`, for mocking the MacOSX's `CMD+TAB`
 
+```
+/usr/share/gnome-control-center/keybindings
+```
+```
+$ gsettings get org.gnome.desktop.wm.keybindings switch-applications
+['<Super>Tab', '<Alt>Tab']
+$ gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Super>Tab', '<Ctrl>Tab']" 
+$ gsettings get org.gnome.desktop.wm.keybindings switch-applications
+['<Super>Tab', '<Ctrl>Tab']
+```
+You can also install a GUI tool for convenience 
+
+```
+$ sudo apt-get install dconf-editor
+```
+https://wiki.ubuntu.com/Keybindings
+http://askubuntu.com/questions/573535/setting-special-keys-as-keyboard-shortcuts
+
+
+Re-mapping gnome-terminal shortcut keys for tab nav
+---------------------------------------------------
+
+default : `CTL+PageUp/PageDown` `CTL+SHIFT+PageUp/PageDown`
+
+-->     : `CTL+SHIFT+]/[`  tab nav
+
+
+Re-mapping firefox shortcut keys for tab nav
+--------------------------------------------
+default : `CTL+Tab` `CTL+PageUp/PageDown`
+
+-->     : `CTL+SHIFT+]/[' tab nav
