@@ -45,7 +45,12 @@ add mod1 = Alt_L Meta_L
 $ xmodmap ~/.Xmodmap
 ```
 
-you can add the line to your `~/.bashrc`
+you can add the above line to your `~/.xinitrc`
 
 
 https://earthviaradio.wordpress.com/2012/02/06/swapping-the-left-alt-and-ctrl-keys-in-ubuntu-11-10/
+
+
+How re-mapping gnome-terminal shortcut keys 
+-------------------------------------------
+
