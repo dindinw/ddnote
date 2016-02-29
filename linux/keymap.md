@@ -83,7 +83,9 @@ default : `CTL+PageUp/PageDown` `CTL+SHIFT+PageUp/PageDown`
 
 ```
 gconftool-2 --set /apps/gnome-terminal/profiles/Default/default_size_columns \
-            --type=int 140 
+            --type=int 125
+gconftool-2 --set /apps/gnome-terminal/profiles/Default/default_size_rows \
+            --type=int 38
 gconftool-2 --set /apps/gnome-terminal/profiles/Default/use_custom_default_size \
             --type=bool true
 gconftool-2 --set /apps/gnome-terminal/keybindings/close_tab --type=string "<Ctrl>w"
