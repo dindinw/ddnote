@@ -134,15 +134,23 @@ $ gconftool-2 --get  /apps/gnome-terminal/keybindings/prev_tab
 <Control>Page_Up
 ```
 Set to `Ctrl>+[` and `Ctrl+[` 
+
 ```
 $ gconftool-2 --set /apps/gnome-terminal/keybindings/next_tab --type=string "<Ctrl>bracketright"
 $ gconftool-2 --set /apps/gnome-terminal/keybindings/prev_tab --type=string "<Ctrl>bracketleft"
 ```
 
 Set to `Ctrl+Shift+]` and `Ctrl+Shift+[`
+
 ```
 $ gconftool-2 --set /apps/gnome-terminal/keybindings/next_tab --type=string "<Ctrl><Shift>braceright"
 $ gconftool-2 --set /apps/gnome-terminal/keybindings/prev_tab --type=string "<Ctrl><Shift>braceleft"
+```
+
+Close window set to `Ctrl+Q`
+
+```
+$ gconftool-2 --set /apps/gnome-terminal/keybindings/close_window --type=string "<Ctrl>Q"
 ```
 
 
