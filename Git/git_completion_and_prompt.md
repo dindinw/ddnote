@@ -27,5 +27,21 @@ if [ -e $GITPROMPT ]; then
 fi
 ```
 
-GIT_PROMPT (http://neta-abc.blogspot.jp/2013/02/git.html)
+***NOTE: more about show states***
+
+we can also use config command
+
+```
+git config --global bash.showDirtyState true
+```
+
+and be noticed that using the show dirty etc features might result a slow terminal.
+```
+$ time __git_ps1
+ (master %=)
+real    0m0.303s
+user    0m0.000s
+sys     0m0.105s
+```
+GIT PROMPT (http://neta-abc.blogspot.jp/2013/02/git.html)
 The PS Color Guide (http://qiita.com/caad1229/items/6d71d84933c8a87af0c4)
