@@ -50,6 +50,35 @@ you can add the above line to your `~/.xinitrc`
 https://earthviaradio.wordpress.com/2012/02/06/swapping-the-left-alt-and-ctrl-keys-in-ubuntu-11-10/
 
 
+***Note For Windows* : How to Switch Alt_L and Ctrl_L and use Ctrl-Tabl using AutoHotKey**
+
+load a script like this
+
+```
+; --------------------------------------------------------------------
+; Switches the left Control and Alt keys but Ctrl-Tab works as Alt-Tab
+; --------------------------------------------------------------------
+*tab::
+{
+if(GetKeyState("LAlt", "P")){
+    Send {LControl up}{Alt down}{tab}
+    KeyWait, tab
+} else if(GetKeyState("LShift", "P")){
+    Send {LShift down}{tab}
+    KeyWait, tab
+}else
+{   send {tab}
+}
+return
+}
+~LAlt Up::
+{   send {lalt up}
+return
+}
+LCtrl::LAlt
+LAlt::LCtrl
+```
+
 Switch Windows by using CTL-TAB
 -------------------------------
 Ubuntu windows manager use `Alt-TAB` to switch windows by default.
