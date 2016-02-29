@@ -139,56 +139,6 @@ Vim Cheat Sheet
     :tabonly or :tabo - close all tabs except for the current one
 
 
-```
-count    normal mode command    motion *=takes count
-
-n        c (change)             0 (first column)
-         y (yank/copy)          ^ (first non-whitespace char)
-         d (delete)             $ (last character)
-         > (indent)             g_ (last non-whitespace char)
-         < (outdent)            w (next beginning of word*)
-         gq ("go quote")        W (next beginning of WORD*)
-         g= (format)            e (next end of word*)
-         gu (go lower)          E (next end of WORD*)
-         gU (go upper)          b (previous beginning of word*)
-         g~ (go case toggle)    B (previous beginning of WORD*)
-         v (visual stream)      gg (line*, or start of buffer)
-         V (visual line)        G (line*, or end of buffer)
-         Ctrl+v (visual block)  j (down*)
-                                k (up*)
-                                h (left*)
-                                l (right*)
-                                } (next blank line*)
-                                { (previous blank line*)
-                                H (top of window (high))
-                                M (middle of window)
-                                L (bottom of window (low))
-                                /foo (next foo*)
-                                ?foo (previous foo*)
-                                n (next match*)
-                                N (previous match*)
-                                fx (forward onto x*)
-                                Fx (backward onto x*)
-                                tx (to x*)
-                                Tx (backward to x*)
-                                ; (repeat t, T, f, or F*)
-                                , (repeat t, T, f, or F, backwards*)
-                                | (to column*)
-                                * (to next word under cursor*)
-                                # (to previous word under cursor*)
-                                `x (to line/col of mark x)
-                                'x (to line of mark x, first non-white)
-                                ]] (next start of block*)
-                                [[ (previous start of block*)
-                                ][ (next end of block*)
-                                [] (previous end of block*)
-                                ]m (next start of method*)
-                                [m (previous start of method*)
-                                ]M (next end of method*)
-                                [M (previous end of method*)
-                                etc...
-```
-
 Column Edit Mode
 ----------------
 1. `Ctrl` + `V` to go into column mode
@@ -196,6 +146,30 @@ Column Edit Mode
 3. `Shift` + `I` to go into insert mode in column mode
 4. Type in the text you want to enter. Dont be discouraged by the fact that only the first row is changed.
 5. `Esc` to apply your change (or alternately Ctrl+c)
+
+
+Access System Clipborad
+-----------------------
+
+```
+set clipboard=unnamedplus
+```
+alias unnamed register to the + register, which is the X Window clipboard. 
+
+For ubuntu, default installed version don't built-in supported the feature
+install `vim-gnome` to replace.
+
+```
+$ vim -version |grep clipboard                
+$ sudo apt-get install vim-gnome
+```
+
+`+` register is the system cliploard. use `"+yy` and `"+p` to test yank and paste
+
+http://vim.wikia.com/wiki/Accessing_the_system_clipboard
+http://stackoverflow.com/questions/11489428/how-to-make-vim-paste-from-and-copy-to-systems-clipboard
+
+Let vim support 
 
 Cheat Sheet Collections
 -----------------------
@@ -222,6 +196,6 @@ REFERENCES
 * 5 Best VIM Cheat Sheet
 > https://rumorscity.com/2014/08/16/5-best-vim-cheat-sheet/
 
-* 阅读原文 (暂时使用外站链接，真实发布时候，可以建立Github页面来Host）
+* Orginal link 
 > https://github.com/rtorr/vim-cheat-sheet
 
