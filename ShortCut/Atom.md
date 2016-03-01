@@ -14,13 +14,26 @@ use `git-bash` in windows override windows cmd
     app: 'C:\\git-sdk-64\\git-bash.exe'
     args: ''
 ```
+### markdown preview
+Install [markdown_preview](https://github.com/atom/markdown-preview)
+By default `Ctrl-Shift-M`
+```
+'atom-workspace, atom-workspace atom-text-editor':
+  'ctrl-shift-M': 'markdown-preview:toggle'
+```
+
 ### Key Remapping
 Atom has a very nice feature, you can copy and paste the default and modify one by one. It's cool!
 Edit your `keymap.cson` (`File->open Your Keymap`)
 
-notice!!, you need to use }, instead of shift+], `ctrl+.` is always your friend for debugging tc
- add short-cut setting view
- https://github.com/atom/settings-view/blob/master/menus/settings-view.cson
+> **Notice!!** you need to use }, instead of shift+], `ctrl+.` is always your friend for debugging tc
+
+* tab nav, close
+* add short-cut to setting view (https://github.com/atom/settings-view/blob/master/menus/settings-view.cson)
+* tree-view toggle
+* open any file
+* exec any action
+
 ```
 'body':
   'alt-}': 'pane:show-next-item'
@@ -37,4 +50,8 @@ notice!!, you need to use }, instead of shift+], `ctrl+.` is always your friend 
 # override `ctrl-t` to toggle find any file, mock `cmd-shift-o` in Idea
 '.platform-win32':
   'alt-shift-o': 'fuzzy-finder:toggle-file-finder'
+
+# any action palette, mock `cmd+shift+a` in idea
+'.platform-win32, .platform-win32 .command-palette atom-text-editor':
+  'alt-shift-a': 'command-palette:toggle'
 ```
