@@ -109,4 +109,17 @@ boot2docker up
 eval `boot2docker shellinit`
 docker --version
 ```
---------------------------------------------
+
+Tty issue in Windows platform for git-bash/mingw/Cgwin etc
+==========================================================
+
+use `winpty` to fix the issue
+
+```
+$ docker run --rm -ti centos7 /bin/bash
+cannot enable tty mode on non tty input
+
+$ winpty docker run --rm -ti centos7 /bin/bash
+[root@822fd64b00a4 /]#
+
+```
