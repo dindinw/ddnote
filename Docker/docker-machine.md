@@ -1,4 +1,4 @@
-NOTE About new docker-machine 
+NOTE About new docker-machine
 =============================
 
 * `boot2docker` cli has migrated to `docker-machine` which officially released from Docker website  
@@ -32,3 +32,22 @@ https://github.com/boot2docker
 https://docs.docker.com/machine/migrate-to-machine/
 https://www.virtualbox.org/manual/ch08.html#vboxmanage-hostonlyif
 
+
+Note about compatible issue of v1 repository
+============================================
+
+need to install a lower version of docker for v1 repository.
+try 1.8 version of boot2docker, but not work in windows for
+> error : unable to prepare context: unable to evaluate symlinks in context path: readlink
+
+finally, got 1.7.1 version of boot2docker working
+
+env script to let two version docker co-exist,
+
+```
+export PATH=/c/Program\ Files/Boot2Docker\ for\ Windows/:$PATH
+boot2docker up
+eval `boot2docker shellinit`
+docker --version
+```
+--------------------------------------------
