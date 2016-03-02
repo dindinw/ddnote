@@ -22,7 +22,66 @@ Status:          Up
 VBoxNetworkName: HostInterfaceNetworking-VirtualBox Host-Only Ethernet Adapter #2
 ```
 
-* use `docker-machine env` where your old `boot2docker shellinit` used
+### Environment
+use `docker-machine env` where your old `boot2docker shellinit` used
+
+### upgrade
+you can alway upgrade your machine with `docker-machine upgrade` command
+```
+$ docker-machine.exe upgrade
+Waiting for SSH to be available...
+Detecting the provisioner...
+Upgrading docker...
+Stopping machine to do the upgrade...
+Upgrading machine "default"...
+Default Boot2Docker ISO is out-of-date, downloading the latest release...
+Latest release for github.com/boot2docker/boot2docker is v1.10.2
+Downloading C:\Users\Alex\.docker\machine\cache\boot2docker.iso from https://github.com/boot2docker/boot2docker/releases/download/v1.10.2/boot2docker.iso...
+0%....10%....20%....30%....40%..
+```
+The above only update the host (server) to v1.10.2, then you need to curl a client
+```
+curl https://get.docker.com/builds/Windows/x86_64/docker-1.10.2.exe -o /c/Program\ Files/Docker\ Toolbox/docker.exe
+
+$ docker --version
+Docker version 1.10.2, build c3959b1
+
+$ docker info
+Containers: 0
+ Running: 0
+ Paused: 0
+ Stopped: 0
+Images: 0
+Server Version: 1.10.2
+Storage Driver: aufs
+ Root Dir: /mnt/sda1/var/lib/docker/aufs
+ Backing Filesystem: extfs
+ Dirs: 0
+ Dirperm1 Supported: true
+Execution Driver: native-0.2
+Logging Driver: json-file
+Plugins:
+ Volume: local
+ Network: bridge null host
+Kernel Version: 4.1.18-boot2docker
+Operating System: Boot2Docker 1.10.2 (TCL 6.4.1); master : 611be10 - Mon Feb 22 22:47:06 UTC 2016
+OSType: linux
+Architecture: x86_64
+CPUs: 1
+Total Memory: 996.1 MiB
+Name: default
+ID: U4P3:GKND:MJHD:GVIQ:ROHK:F3UI:UCJL:3JHU:N6UH:ZAMP:5SYZ:OF66
+Debug mode (server): true
+ File Descriptors: 11
+ Goroutines: 21
+ System Time: 2016-03-02T07:03:00.931263742Z
+ EventsListeners: 0
+ Init SHA1:
+ Init Path: /usr/local/bin/docker
+ Docker Root Dir: /mnt/sda1/var/lib/docker
+Labels:
+ provider=virtualbox
+```
 
 References
 ----------
