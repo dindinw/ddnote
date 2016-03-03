@@ -123,3 +123,27 @@ $ winpty docker run --rm -ti centos7 /bin/bash
 [root@822fd64b00a4 /]#
 
 ```
+
+How to use "-v" in Windows Docker
+----------------------------------
+> https://docs.docker.com/engine/userguide/containers/dockervolumes/
+> On Windows, mount directories using:
+``` docker run -v /c/Users/<path>:/<container path> ...`
+```
+All other paths come from your virtual machine’s filesystem, so if you want to make some other host folder available for sharing, you need to do additional work. In the case of VirtualBox you need to make the host folder available as a shared folder in VirtualBox. Then, you can mount it using the Docker -v flag.
+
+You might got a protocol error when try to map a path other than `/c/Users`
+Get the windows path of current folder
+```
+cygpath -w `pwd`
+```
+
+need to mount a share-folder into boot2docer vm
+```
+$ boot2docker stop
+$ VBoxManage sharedfolder add boot2docker-vm --name mydata --hostpath "$(cygpath -w `pwd`)"
+$ boot2docker start
+Waiting for VM and Docker daemon to start...
+...............
+$
+```
