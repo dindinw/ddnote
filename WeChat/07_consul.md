@@ -105,3 +105,22 @@ use `ServiceID` to deregister
 curl http://localhost:8500/v1/agent/service/deregister/sd
 ```
 
+
+###  Service in a Cluster
+
+add two instances of a service in one node, the service name is unique.
+
+```
+curl -H "Content-Type: application/json" -X POST -d '{"id":"sd1", "name": "sd", "tags": ["sd-server-sd1"], "port": 2013}' http://localhost:8500/v1/agent/service/register
+curl -H "Content-Type: application/json" -X POST -d '{"id":"sd2", "name": "sd", "tags": ["sd-server-sd2"], "port": 2013}' http://localhost:8500/v1/agent/service/register
+```
+
+```
+curl http://localhost:8500/v1/agent/service/deregister/sd1
+```
+
+### Exec can run anything! (scary me)
+
+```
+consul exec -node=<node_name> <command_what_ever_you_want>_
+```
